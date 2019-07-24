@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Flask, render_template, redirect, request, current_app
+from flask import Flask, render_template, redirect, request, current_app, jsonify
 app = Flask(__name__)
 
 from functools import wraps
@@ -27,7 +27,7 @@ def hello():
     hum, temp = raw_dht()
     return render_template('index.html', humidity = hum, temperature = temp)
 
-@app.route("/dht")
+
 @support_jsonp
 def api_dht():
     humidity, temperature = raw_dht()
@@ -35,7 +35,26 @@ def api_dht():
         return "{ temperature: '" + "{0:0.0f}".format(temperature) +  "', humidity: '" + "{0:0.0f}".format(humidity) + "' }"
     else:
         return "Failed to get reading. Try again!", 500
-
+    
+@support_jsonp
+@app.route("/api/humidity")
+def humidity():
+    humidity_reading, temp = raw_dht()
+    
+    if humidity_reading is not None:
+        return jsonify(humidity=humidity_reading)
+    else:
+        return jsonify(noreponse="")
+    
+@support_jsonp
+@app.route("/api/temperature")
+def temperature():
+    temperature_reading = raw_dht()
+    
+    if temperature_reading is not None:
+        return jsonify(temperature=temperature_reading)
+    else:
+        return jsonify(noreponse="")
 
 def raw_dht():
     return read_retry(sensor, pin)
