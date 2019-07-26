@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<title>T and H Webapp</title>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<title>Huet</title>
+	</head>
+	<body>
+	<header>
+		<div>
+			<h1>Huet</h1>
+		<div>
+	</header>
+
+	<section>
+		<div class="container">
+			<form method="POST" action="/">
+			<div class="Hue">
+				<div class="label">
+					<label><h1>Humidty</h1></label>
+				</div>
+				<div class="input">
+					<input class="style_input" value={{humidity}}>
+				</div>
+			<div class="button">
+					<button type="submit" formmethod="post" class="style_button" name="humidity" value="humidity">Check</button>
+			</div>
+			</div>
+		<form>
+		<form method="POST" action="/">
+			<div class="Temp">
+				<div class="label">
+                                	<label><h1>Temperature</h1></label>
+				</div>
+				<div class="input">
+                                	<input class="style_input" value={{temperature}}>
+				</div>
+				<div class="button">
+                                	<button type="submit" formmethod="post" class="style_button" name="temperature" value="temperature">Check</button>
+				</div>
+                        </div>
+		</form>
+		</div>
+
+		<footer>
+			Copyright &copy; 2019
+		</footer>
+	</section>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+body{
+font-family: "Ariel",sans-serif;}
+
+header{
+overflow: hidden;
+height: 70px;
+width: 100vw;
+background-color: #ebebeb;}
+
+header h1{
+padding-left: 25px;}
+
+
+.container{;
+width: 100vw;
+height: 100vw;}
+
+.Hue{
+background-image: url(img/a3.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+float: right;
+text-align: center;
+width: 50%;
+height: 50%;}
+
+.Temp{
+background-image: url(img/a2.jpeg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+text-align: center;
+float: left;
+width: 50%;
+height: 50%;}
+
+.label{
+font-size: larger;
+padding-top:10%;}
+
+.input{
+padding-top:10%;}
+
+.button{
+padding-top: 20%;
+}
+
+.Hue .style_button{
+height: 50px;
+width: 50%;
+border-radius: 37%;
+background-color: #424949;}
+
+.Hue .style_button:hover{
+font-colour: #ffffff;
+background-color: #17202a;}
+
+
+.style_input{
+width: 70%;
+height: 40px;}
+
+.Temp .style_button{
+height: 50px;
+width: 50%; 
+border-radius: 37%; 
+background-color: #e59866;}
+
+.Temp .style_button:hover{ 
+background-color: #ba4a00;}
+
+.style_input{
+width: 70%;
+height: 40px;}
+
+footer{
+background-color: #ebebeb;}
